@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rdf:RDF
+   xmlns:ns="http://example.org/"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+>
+  <rdf:Description rdf:about="http://example.org/AcademicStaffMember">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Academic Staff Member</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/StaffMember"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/involves">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:range rdf:resource="http://example.org/AcademicStaffMember"/>
+    <rdfs:label>involves</rdfs:label>
+    <rdfs:domain rdf:resource="http://example.org/Course"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/phone">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://example.org/StaffMember"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/isToughtBy">
+    <rdf:type rdf:resource="http://www.w3.org/1999/02/22-rdf-syntax-ns#Property"/>
+    <rdfs:domain rdf:resource="http://example.org/Course"/>
+    <rdfs:subPropertyOf rdf:resource="http://example.org/involves"/>
+    <rdfs:label>is Tought By</rdfs:label>
+    <rdfs:range rdf:resource="http://example.org/AcademicStaffMember"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/ID">
+    <rdfs:range rdf:resource="http://www.w3.org/2000/01/rdf-schema#Literal"/>
+    <rdfs:domain rdf:resource="http://example.org/StaffMember"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/Professor">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Professor</rdfs:label>
+    <rdfs:subClassOf rdf:resource="http://example.org/AcademicStaffMember"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/AssistantProfessor">
+    <rdfs:subClassOf rdf:resource="http://example.org/AcademicStaffMember"/>
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Assistant Professor</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/KnowledgeEngineering">
+    <ns:isToughtBy rdf:resource="http://example.org/JuanziLi"/>
+    <rdf:type rdf:resource="http://example.org/Course"/>
+    <rdfs:label>Knowledge Engineering</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/Course">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Course</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/JuanziLi">
+    <rdfs:label>Juanzi Li</rdfs:label>
+    <rdf:type rdf:resource="http://example.org/Professor"/>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/StaffMember">
+    <rdf:type rdf:resource="http://www.w3.org/2000/01/rdf-schema#Class"/>
+    <rdfs:label>Staff Member</rdfs:label>
+  </rdf:Description>
+  <rdf:Description rdf:about="http://example.org/AssociateProfessor">
+    <rdfs:subClassOf rdf:resource="http://example.org/AcademicStaffMember"/>
+  </rdf:Description>
+</rdf:RDF>
